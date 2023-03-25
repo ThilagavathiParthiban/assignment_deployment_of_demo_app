@@ -6,7 +6,7 @@ on:
 env:
   AWS_REGION: ap-south-1
   ECS_CLUSTER: demoapp_cluster
-  CONTAINER_NAME: app
+  CONTAINER_NAME: demoapp
   ECS_SERVICE: demoapp_service
   ECS_TD: td.json
 
