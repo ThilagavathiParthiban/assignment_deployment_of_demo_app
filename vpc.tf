@@ -29,17 +29,9 @@ resource "aws_security_group" "sg" {
   vpc_id = aws_vpc.vpc.id
 
   ingress {
-    description = "https"
-    from_port   = 443
-    to_port     = 443
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "http"
-    from_port   = 80
-    to_port     = 80
+    description = "nodejs"
+    from_port   = 3000
+    to_port     = 3000
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -72,15 +64,15 @@ resource "aws_route_table" "rt" {
 
 resource "aws_route_table_association" "route1" {
   route_table_id = aws_route_table.rt.id
-  subnet_id      = aws_subnet.sn1.id
+  subnet_id      = aws_subnet.subnet1.id
 }
 
 resource "aws_route_table_association" "route2" {
   route_table_id = aws_route_table.rt.id
-  subnet_id      = aws_subnet.sn2.id
+  subnet_id      = aws_subnet.subnet2.id
 }
 
 resource "aws_route_table_association" "route3" {
   route_table_id = aws_route_table.rt.id
-  subnet_id      = aws_subnet.sn3.id
+  subnet_id      = aws_subnet.subnet3.id
 }
