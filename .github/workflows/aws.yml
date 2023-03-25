@@ -8,7 +8,7 @@ env:
   ECS_CLUSTER: demoapp_cluster
   CONTAINER_NAME: demoapp
   ECS_SERVICE: demoapp_service
-  ECS_TD: td.json
+  ECS_TD: .github/workflows/td.json
 
 jobs:
   deploy:
